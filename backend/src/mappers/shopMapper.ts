@@ -1,5 +1,7 @@
 import { type Shop, Prisma } from '@prisma/client';
-import type { CreateShopDto, ShopResponseDto } from '../dtos/shopDto.js';
+import type { CreateShopDto, ShopResponseDto } from '../schemas/shopSchema.js';
+
+
 
 
 export const ShopMapper = {

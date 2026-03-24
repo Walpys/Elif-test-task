@@ -1,5 +1,5 @@
 import { type Product, Prisma } from '@prisma/client';
-import type { CreateProductDto, ProductResponseDto } from '../dtos/productDto.js';
+import type { CreateProductDto, ProductResponseDto } from '../schemas/productSchema.js';
 
 
 export const ProductMapper = {
@@ -11,7 +11,7 @@ export const ProductMapper = {
       price: model.price.toNumber(),
       imageUrl: model.imageUrl ?? '',
       category: model.category ?? '',
-      createdAt: (model as any).createdAt 
+      
     };
   },
 

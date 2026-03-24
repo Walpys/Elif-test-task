@@ -1,8 +1,7 @@
 import { prisma } from '../lib/prisma.js';
-import { ProductMapper } from '../mappers/productMapper.js';
-import type { ProductQuery } from '../Common/ProductQuery.js';
-import type { ProductResponseDto } from '../dtos/productDto.js';
 import { Prisma } from '@prisma/client';
+import type { ProductQuery, ProductResponseDto } from '../schemas/productSchema.js';
+import { ProductMapper } from '../mappers/productMapper.js';
 
 export const ProductService = {
   async getAllProducts(): Promise<ProductResponseDto[]> {
@@ -10,29 +9,30 @@ export const ProductService = {
     return products.map(ProductMapper.toDto);
   },
 
-async getByShop(params: ProductQuery) {
+  async getByShop(params: ProductQuery) {
     const { 
       shopId, 
       category, 
       cursor, 
-      limit = 10, 
-      sortBy = 'name', 
-      order = 'asc' 
+      limit, 
+      sortBy, 
+      order 
     } = params;
 
     const where: Prisma.ProductWhereInput = { shopId };
-    if (category?.trim()) {
+    
+
+    if (category) {
       where.category = { equals: category, mode: 'insensitive' };
     }
 
     const queryArgs: Prisma.ProductFindManyArgs = {
       where,
-      take: Number(limit),
+      take: limit, 
       orderBy: { 
         [sortBy]: order 
       } as Prisma.ProductOrderByWithRelationInput,
     };
-
 
     if (cursor) {
       queryArgs.cursor = { id: cursor };
@@ -63,5 +63,5 @@ async getByShop(params: ProductQuery) {
   return products
     .map(p => p.category)
     .filter((category): category is string => !!category);
-}
+  }
 };

@@ -28,6 +28,7 @@ model Product {
   category  String?
   shopId    String
   shop      Shop     @relation(fields: [shopId], references: [id])
+  orderItems  OrderItem[]
 }
 
 model Order {
@@ -47,5 +48,6 @@ model OrderItem {
   productId String
   quantity  Int
   price     Decimal
+  product   Product @relation(fields: [productId], references: [id])
   order     Order   @relation(fields: [orderId], references: [id])
 }
