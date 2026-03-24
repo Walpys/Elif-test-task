@@ -1,0 +1,32 @@
+.container {
+  display: flex;
+  gap: 24px;
+  padding: 24px;
+  max-width: 1440px;
+  margin: 0 auto;
+  align-items: flex-start;
+  min-height: calc(100vh - 80px); 
+}
+
+.productsGrid {
+  flex: 1;
+  display: grid;
+
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); 
+  gap: 24px;
+  max-height: 85vh;
+  overflow-y: auto;
+  padding: 10px;
+  border-radius: 12px;
+  background: #fdfdfd; 
+}
+
+
+.productsGrid::-webkit-scrollbar {
+  width: 6px;
+}
+
+.productsGrid::-webkit-scrollbar-thumb {
+  background: #d1d5db;
+  border-radius: 10px;
+}
