@@ -1,5 +1,5 @@
 import { type Product, Prisma } from '@prisma/client';
-import type { CreateProductDto, ProductResponseDto } from '../src/dtos/productDto.js';
+import type { CreateProductDto, ProductResponseDto } from '../dtos/productDto.js';
 
 
 export const ProductMapper = {
