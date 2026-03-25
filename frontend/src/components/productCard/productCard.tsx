@@ -1,4 +1,4 @@
-import styles from './ProductCard.module.css';
+import styles from './productCard.module.css';
 import type { ProductDetails } from '../../types/product'; 
 import { Button } from '../UI/button/Button';
 

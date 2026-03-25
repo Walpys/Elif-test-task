@@ -1,5 +1,5 @@
 import { Plus, Minus } from 'lucide-react'; 
-import styles from './QuantityPicker.module.css';
+import styles from './quantityPicker.module.css';
 
 interface QuantityPickerProps {
   value: number;

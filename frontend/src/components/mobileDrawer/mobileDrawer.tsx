@@ -1,6 +1,6 @@
 // src/components/UI/MobileDrawer/MobileDrawer.tsx
 import type { ReactNode } from 'react';
-import styles from './MobileDrawer.module.css';
+import styles from './mobileDrawer.module.css';
 
 interface MobileDrawerProps {
   isOpen: boolean;
