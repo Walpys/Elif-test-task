@@ -3,7 +3,7 @@ import { useCart } from "../../hooks/useCart";
 import type{ CartItem as CartItemType } from "../../types/cart"; 
 import { Button } from "../UI/button/Button";
 import { QuantityPicker } from "../UI/quantityPicker/quantityPicker";
-import styles from "./CartItem.module.css";
+import styles from "./cartItem.module.css";
 
 export const CartItem = ({ item }: { item: CartItemType }) => {
     const { updateQuantity, removeFromCart } = useCart();
