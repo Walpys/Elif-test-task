@@ -1,7 +1,8 @@
+import type { CreateOrder } from "../types/order";
 import api from "./axios";
 
 export const orderApi = {
-  create: async (orderData: any) => {
+  create: async (orderData: CreateOrder) => {
     const { data } = await api.post('/orders', orderData);
     return data;
   },

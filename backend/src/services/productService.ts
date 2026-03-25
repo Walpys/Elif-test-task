@@ -54,11 +54,11 @@ export const ProductService = {
   },
 
   async getCategoriesByShop(shopId: string): Promise<string[]> {
-  const products = await prisma.product.findMany({
-    where: { shopId },
-    select: { category: true },
-    distinct: ['category'],
-  });
+    const products = await prisma.product.findMany({
+      where: { shopId },
+      select: { category: true },
+      distinct: ['category'],
+    });
   
   return products
     .map(p => p.category)

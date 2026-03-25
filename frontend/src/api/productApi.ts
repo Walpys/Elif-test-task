@@ -1,12 +1,22 @@
-import type { ProductDetails } from "../types/product";
+import type { GetProductsResponse, ProductDetails } from "../types/product";
 import api from "./axios";
+interface GetProductsParams {
+  shopId: string;
+  category?: string;
+  sortBy?: string;
+  order?: 'asc' | 'desc';
+  limit?: number;
+  cursor?: string;
+}
 
-export const productApi = {
+  export const productApi = {
+    getByShop: async (query: any): Promise<GetProductsResponse> => {
+    const { data } = await api.get<GetProductsResponse>('/products', { params: query });
+    return data;
+  },
 
-  getByShop: async (shopId: string): Promise<{ items: ProductDetails[] }> => {
-    const { data } = await api.get('/products', {
-      params: { shopId, limit: 50 }, 
-    });
+  getCategories: async (shopId: string): Promise<string[]> => {
+    const { data } = await api.get(`/products/categories/${shopId}`);
     return data;
   },
 };

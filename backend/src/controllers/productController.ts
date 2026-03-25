@@ -14,13 +14,17 @@ export const ProductController = {
     }
   },
 
-  async getCategories(req: Request<{ shopId: string }>, res: Response) {
+  async getCategories(req: Request, res: Response) {
     try {
-      const { shopId } = req.params;
-      const categories = await ProductService.getCategoriesByShop(shopId);
+      const { id } = req.params; 
+    
+      if (!id || typeof id !== 'string') {
+        return res.status(400).json({ message: 'Invalid or missing Shop ID' });
+      }
+      const categories = await ProductService.getCategoriesByShop(id);
       res.json(categories);
     } catch (error) {
       res.status(500).json({ message: 'Error while retrieving categories', error });
-    }
+    } 
   }
 };

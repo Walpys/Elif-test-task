@@ -9,6 +9,6 @@ const productRoutes = Router();
 
 productRoutes.get('/', validate(ProductQuerySchema), ProductController.getByShop);
 
-productRoutes.get('/categories/:shopId', validate(IdParamSchema), ProductController.getCategories);
+productRoutes.get('/categories/:id', validate(IdParamSchema), ProductController.getCategories);
 
 export default productRoutes;
