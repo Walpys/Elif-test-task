@@ -14,8 +14,7 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
     localStorage.setItem('delivery-cart', JSON.stringify(cart));
   }, [cart]);
 
-  const actions = useCartActions(cart, setCart);
-
+  const actions = useCartActions(setCart);
   const stats = useMemo(() => ({
     totalPrice: cart.reduce((sum, item) => sum + item.price * item.quantity, 0),
     totalItems: cart.reduce((sum, item) => sum + item.quantity, 0),
