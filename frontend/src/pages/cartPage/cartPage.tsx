@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useCart } from '../../hooks/useCart';
-import styles from './CartPage.module.css';
+import styles from './cartPage.module.css';
 import { Input } from '../../components/UI/input/Input';
 import { CartItem } from '../../components/cartItem/cartItem';
 import { Button } from '../../components/UI/button/Button';

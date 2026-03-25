@@ -1,5 +1,5 @@
 import { useEffect, useState, useRef, useMemo } from 'react';
-import styles from './ShopPage.module.css';
+import styles from './shopPage.module.css';
 import type { ShortShop } from '../../types/shop';
 import { shopApi } from '../../api/shopApi';
 import { productApi } from '../../api/productApi';

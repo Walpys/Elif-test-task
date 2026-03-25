@@ -3,7 +3,7 @@ import { Search, Package, Clock, AlertCircle } from 'lucide-react';
 import { orderApi } from '../../api/orderApi';
 import { Input } from '../../components/UI/input/Input';
 import { Button } from '../../components/UI/button/Button';
-import styles from './HistoryPage.module.css';
+import styles from './historyPage.module.css';
 import { formatDate } from '../../helpers/dateHelper';
 
 export const HistoryPage = () => {

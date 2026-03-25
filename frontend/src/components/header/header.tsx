@@ -1,5 +1,5 @@
 import { Link, useLocation } from 'react-router-dom';
-import styles from './Header.module.css';
+import styles from './header.module.css';
 import { ShoppingCart, Store, History } from 'lucide-react';
 import { useCart } from '../../hooks/useCart';
 

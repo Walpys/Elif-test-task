@@ -54,7 +54,7 @@ registry.registerPath({
   tags: ['Orders'],
   summary: 'Create a new order (Server calculates price)',
   request: {
-    body: { 
+    body: {
       content: { 
         'application/json': { 
           schema: CreateOrderSchema.shape.body 
