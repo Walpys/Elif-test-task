@@ -1,5 +1,5 @@
 import { orderApi } from '../api/orderApi';
-import type{ CreateOrder, OrderItem } from '../types/order';
+import type{ CreateOrder } from '../types/order';
 
 export const orderService = {
   async placeOrder(formData: any, cartItems: any[]) {

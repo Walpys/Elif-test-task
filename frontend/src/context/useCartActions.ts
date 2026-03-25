@@ -2,7 +2,6 @@ import type{ ProductDetails } from '../types/product';
 import type{ CartItem } from '../types/cart';
 
 export const useCartActions = (
-  cart: CartItem[], 
   setCart: React.Dispatch<React.SetStateAction<CartItem[]>>
 ) => {
   
