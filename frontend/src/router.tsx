@@ -3,9 +3,9 @@ import { createBrowserRouter, Navigate } from 'react-router-dom';
 import { ShopPage } from './pages/shopPage/shopPage';
 import { Layout } from './components/layout/layout';
 import { CartPage } from './pages/cartPage/cartPage';
+import { HistoryPage } from './pages/historyPage/historyPage';
 
 
-const HistoryPage = () => <div style={{ padding: '2rem' }}>📜 Order History Page</div>;
 
 export const router = createBrowserRouter([
   {

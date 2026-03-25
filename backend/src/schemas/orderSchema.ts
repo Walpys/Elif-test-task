@@ -16,8 +16,8 @@ export type CreateOrderDto = z.infer<typeof CreateOrderSchema>['body'];
 
 export const OrderHistorySchema = z.object({
   query: z.object({
-    email: z.string().email().optional(),
-    phone: z.string().optional(),
+    email: z.preprocess((val) => (val === '' ? undefined : val), z.string().email().optional()),
+    phone: z.preprocess((val) => (val === '' ? undefined : val), z.string().optional()),
   }).refine(data => data.email || data.phone, {
     message: "Either email or phone must be provided"
   })
